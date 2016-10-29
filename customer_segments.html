@@ -12052,7 +12052,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>The indices are chosen to represent 3 significantly different customers and thus different buying habits. The first customer represents an average high spending customer where the value of each category falls around the 75%. There are 3 features above the 75% and 3 below. The second sample represents a very low spending customer where all the categories are much lower then the 25% and the mean. Finally, the third sample represents an edge case of a customer who spends a lot on 1 category where its value is greater than mean + 2 std. On the other hand this customer spends little on other categories.</p>
+<p>The indices are chosen to represent 3 significantly different customers and thus different buying habits. The first customer represents an average high spending customer where the value of each category falls around the 75%. There are 3 features above the 75% and 3 below. This could be a big retailer with specific section for Fresh products for example. The second sample represents a very low spending customer where all the categories are much lower then the 25% and the mean. In this case, the customer might be a small independent gorcery store that serves a small number of customers in a specific area. Finally, the third sample represents an edge case of a customer who spends a lot on 1 category where its value is greater than mean + 2 std. On the other hand this customer spends little on other categories. This can represent a big restaurant that uses a lot of fresh products in the food they serve along with other food related products such as Frozen and Delicatessen.</p>
 
 </div>
 </div>
@@ -13974,7 +13974,7 @@ Ny7+WPF7swAAAABJRU5ErkJggg==
 <p><strong>Answer:</strong></p>
 <p><strong>Are there any pairs of features which exhibit some degree of correlation? </strong> The most clear corrolation appears between 'Detergents_Paper' and 'Grocery'. Other less corrolated products are 'Milk' vs 'Grocery' and 'Milk' vs. 'Detergents_Paper'. These can be seen on the graphs where seems to be a linear relationship between the different pairs.</p>
 <p><strong>Does this confirm or deny your suspicions about the relevance of the feature you attempted to predict? </strong> Since there is a corrolation between 'Detergents_Paper' and 'Milk' and 'Grocery' it is a confirmation that we achieve best results when trying to predict 'Detergents_Paper'. The information is the feature is corrolated with the target.</p>
-<p><strong>How is the data for those features distributed? </strong> The data can be seen as a skew normal distribution. Most of the points are condensed on the low values with fewer and fewer points as we increase the amount for each category.</p>
+<p><strong>How is the data for those features distributed? </strong> The data can be seen as a log-normal distribution. Most of the points are condensed on the low values with fewer and fewer points as we increase the amount for each category. From the curve we can see that applying logarithm to the values will reduce the big range between the small and big amounts and thus eliminate the skew that we see in the log-normal distribution thus transforming it to a normal distribution.</p>
 
 </div>
 </div>
@@ -21395,8 +21395,8 @@ AAAQGwQgAAAAALFBAAIAAAAQGwQgAAAAALHx/3JM/4NVA2XAAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>The first cluster identiefies cutomers that spends on "Milk", "Grocery" and "Detergants_Paper". As we expect from the description of our data. The values of these 3 categories falls between the 50 and 75 percentile of the corresponding category. This means that this segment of customers are on the top 50% spenders on these categories. On the other hand the features "Fresh" and "Frozen" of category 0 falls in the lower 50 percentile. Which means that these customers indeed spend less then the median on these categories.</p>
-<p>The opposite is true to Category 1 where spending on "Fresh" and "Frozen" falls in the top 50% bracket whereas spending on "Milk", "Gorcery" and "Detergants_Paper" falls in the lower 50%.</p>
+<p>The first cluster identiefies cutomers that spends on "Milk", "Grocery" and "Detergants_Paper". As we expect from the description of our data. The values of these 3 categories falls between the 50 and 75 percentile of the corresponding category. This means that this segment of customers are on the top 50% spenders on these categories. On the other hand the features "Fresh" and "Frozen" of category 0 falls in the lower 50 percentile. Which means that these customers indeed spend less then the median on these categories. This Category could be representing retailers, supermarkets, grocery stores, airports duty free, etc.</p>
+<p>The opposite is true to Category 1 where spending on "Fresh" and "Frozen" falls in the top 50% bracket whereas spending on "Milk", "Gorcery" and "Detergants_Paper" falls in the lower 50%. This category is probably representing specialty shops that are focused on fresh products, organic products. It can also include restaurants, companies cafeterias, catering services, etc.</p>
 <p>I would also note that since these are average cases of each category, we can see that there are no extereme values for a specific feature and in general all the values falls around the mean. above or below than the mean depending on the bias of each category. Note that outliers significantly effects the mean computation and thus this general rule might not always be valid.</p>
 <p>Finally, it is to be noted that the category "Delicatessen" did not have significat impact on the division of our 2 categories. Had we had more than 2 clusters, it is possible that this feature can play a more important role.</p>
 
@@ -22372,6 +22372,19 @@ AAAAiA0CEAAAAIDY+P/bQE3+IpENugAAAABJRU5ErkJggg==
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
